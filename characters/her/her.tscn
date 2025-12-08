@@ -239,10 +239,11 @@ _data = {
 &"her_hand": SubResource("Animation_4vfes")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4vfes"]
-radius = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1qym"]
+size = Vector2(25, 49)
 
 [node name="Her" type="CharacterBody2D" groups=["Queen"]]
+z_index = 1
 script = ExtResource("1_4vfes")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -325,7 +326,8 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_4vfes")
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_g1qym")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

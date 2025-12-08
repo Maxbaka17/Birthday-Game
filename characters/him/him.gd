@@ -8,6 +8,11 @@ var following_her = true
 var behind_her = false
 var in_control = false
 var her_position
+
+var follow_speed := 100.0    # desired horizontal speed when following
+var accel := 500.0           # how fast velocity moves to desired
+var stop_distance := 8.0     # how close before we stop following
+
 @onready var her : CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
@@ -19,6 +24,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("left","right")
 	
 	if Input.is_action_just_pressed("follow"):
+			
 		if not her.he_is_close:
 			following_her = true
 			
@@ -26,8 +32,8 @@ func _physics_process(delta):
 			following_her = false
 		
 		
-	if not in_control:
-		follow_her(delta)
+
+		
 		
 	if picked_up:
 		in_control = true
@@ -35,19 +41,15 @@ func _physics_process(delta):
 	else:
 		in_control = false
 		
-	if her.picked_up:
-		if her.global_position == Vector2(0,0):
-			if not her.he_is_close:
-				if Input.is_action_just_pressed("pick_up"):
-					her.picked_up = false
-					picked_up = false
-					her.camera.enabled = true
-					camera.enabled = false
-					her.global_position.x = global_position.x - 20
+	
+
 	#print(velocity.x)
-	animation()
+	
 	move(direction)
 	sprite_slip(direction)
+	follow_her(delta)
+	drop_her()
+	animation()
 	gravity()
 	move_and_slide()
 	pass
@@ -92,11 +94,47 @@ func animation():
 			animation_player.play("holding her idle")
 			
 		
+func drop_her():
+	if her.picked_up:
+		if her.global_position == Vector2(0,0):
+			if not her.he_is_close:
+				if Input.is_action_just_pressed("pick_up"):
+					her.picked_up = false
+					picked_up = false
+					her.camera.enabled = true
+					camera.enabled = false
+					if sprite_2d.flip_h:
+						her.global_position.x = global_position.x + 20
+						
+					else:
+						her.global_position.x = global_position.x - 20
+
+
 func follow_her(delta):
-	if following_her:
-		if global_position != her.global_position:
-			
-			velocity.x = move_toward(velocity.x,her.global_position.x,speeed * delta)
-			
-	else:
-		velocity.x = move_toward(velocity.x,0,speeed)
+	if her == null:
+		return
+	
+	if in_control:
+		return
+		
+	if not following_her:
+		# smoothly slow to stop when not following
+		velocity.x = move_toward(velocity.x, 0, accel )
+		return
+
+	# distance from me to her (positive => her is to my right)
+	var dist := her.global_position.x - global_position.x
+
+	# if we're close enough, stop following
+	if abs(dist) <= stop_distance:
+		following_her = false
+		velocity.x = move_toward(velocity.x, 0, accel * delta)
+		return
+
+	# desired velocity: go toward her at follow_speed
+	var desired: float = sign(dist) * follow_speed
+
+	# accelerate toward desired velocity
+	velocity.x = move_toward(velocity.x, desired, accel * delta)
+		
+	

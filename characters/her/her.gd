@@ -84,7 +84,7 @@ func _on_area_2d_area_exited(area):
 	var area_parent = area.get_parent()
 	if area_parent.is_in_group("him"):
 		he_is_close = false
+		
 		#
-		pass
-		#area_parent.following_her = true
+	
 		
