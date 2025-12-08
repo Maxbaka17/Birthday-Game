@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjfqmmyfu52d1"]
+
+[ext_resource type="Texture2D" uid="uid://b6owc0ih4n060" path="res://characters/her/sprites/her.png" id="1_4vfes"]
+
+[node name="Her" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4vfes")
