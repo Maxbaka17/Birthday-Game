@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6owc0ih4n060"
-path="res://.godot/imported/her.png-eb3546fbcd717e31508c46dfe6afeb3c.ctex"
+uid="uid://bbgk4ratyh8nr"
+path="res://.godot/imported/grass.png-5f2285a247ee0796753ca22e6456d708.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/her/sprites/her.png"
-dest_files=["res://.godot/imported/her.png-eb3546fbcd717e31508c46dfe6afeb3c.ctex"]
+source_file="res://tile map/grass.png"
+dest_files=["res://.godot/imported/grass.png-5f2285a247ee0796753ca22e6456d708.ctex"]
 
 [params]
 

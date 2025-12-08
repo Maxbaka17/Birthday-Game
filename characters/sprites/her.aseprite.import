@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c3h1t2fghejhe"
+path="res://.godot/imported/her.aseprite-afb53e20c59d39d8d34911f09f032753.res"
+
+[deps]
+
+source_file="res://characters/sprites/her.aseprite"
+dest_files=["res://.godot/imported/her.aseprite-afb53e20c59d39d8d34911f09f032753.res"]
+
+[params]
+
