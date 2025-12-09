@@ -55,11 +55,12 @@ func _physics_process(delta):
 	pass
 	
 func gravity():
-	if not is_on_floor():
-		velocity.y += 600
-	
-	else:
+	if is_on_floor():
 		velocity.y = 0
+		return
+		
+	
+	velocity.y += 600
 		
 func sprite_slip(dir):
 	if not in_control:
