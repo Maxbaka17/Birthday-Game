@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm5a7tbwx4m6r"
+path="res://.godot/imported/happy_birtday song.mp3-44fb2afea62424d29d94f6ac925bbe27.mp3str"
+
+[deps]
+
+source_file="res://sounds/happy_birtday song.mp3"
+dest_files=["res://.godot/imported/happy_birtday song.mp3-44fb2afea62424d29d94f6ac925bbe27.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=23
+bar_beats=4

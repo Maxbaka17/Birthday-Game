@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://88mfa7wsmn6o"
+path="res://.godot/imported/balancing.ase-7b6d5c6e90e1112220eaa4ea79534065.res"
+
+[deps]
+
+source_file="res://sprites/dancing/balancing.ase"
+dest_files=["res://.godot/imported/balancing.ase-7b6d5c6e90e1112220eaa4ea79534065.res"]
+
+[params]
+

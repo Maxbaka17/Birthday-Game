@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://l5odngukxdrs"
+path="res://.godot/imported/skip.ase-e75991fcaafb099335256a44b60029bb.res"
+
+[deps]
+
+source_file="res://sprites/dancing/skip.ase"
+dest_files=["res://.godot/imported/skip.ase-e75991fcaafb099335256a44b60029bb.res"]
+
+[params]
+

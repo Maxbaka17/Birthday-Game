@@ -11,17 +11,33 @@ var in_control = true
 @onready var animation_player = $AnimationPlayer
 @onready var camera = $Camera2D
 
+var pick_button 
+var call_button
+
 func _physics_process(delta):
 	him = get_tree().get_first_node_in_group("him")
 	var direction = Input.get_axis("left","right")
-	
-	
+	pick_button = get_tree().get_first_node_in_group("pick button")
+	call_button = get_tree().get_first_node_in_group("call button")
 	sprite_slip(direction)
 	move(direction)
 	hold_hand()
 	animation()
 	gravity()
+	if he_is_close:
+		pick_button.visible = true
+		call_button.visible = false
+		
+	else:
 	
+		if not picked_up:
+			pick_button.visible = false
+			call_button.visible = true
+			
+		else:
+			call_button.visible = false
+			
+		
 	if picked_up:
 		visible = false
 		global_position = Vector2(0,0)
@@ -73,12 +89,12 @@ func pick_up():
 	
 	if he_is_close:
 		if not picked_up:
-			#velocity.x = move_toward(velocity.x,him.global_position.x,speed)
+			
 			him.camera.enabled = true
 			camera.enabled = false
 			picked_up = true
 			him.picked_up = true
-			print("pick_up")
+			
 		else:
 			picked_up = false
 			him.picked_up = false
@@ -98,7 +114,7 @@ func hold_hand():
 			him.camera.enabled = true
 			camera.enabled = false
 			in_control = false
-			print("HOLDING HANDS")
+			
 			pass
 	
 

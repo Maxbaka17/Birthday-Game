@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bsi02cp6qwads"
+path="res://.godot/imported/player_dancing.aseprite-9f4c8a9dbefe6c23b584acbc26fe847e.res"
+
+[deps]
+
+source_file="res://sprites/dancing/player_dancing.aseprite"
+dest_files=["res://.godot/imported/player_dancing.aseprite-9f4c8a9dbefe6c23b584acbc26fe847e.res"]
+
+[params]
+

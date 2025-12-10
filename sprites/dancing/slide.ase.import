@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dqad0iyqy7a0i"
+path="res://.godot/imported/slide.ase-cd1aeeef82590e807a0b00d79a9e2e76.res"
+
+[deps]
+
+source_file="res://sprites/dancing/slide.ase"
+dest_files=["res://.godot/imported/slide.ase-cd1aeeef82590e807a0b00d79a9e2e76.res"]
+
+[params]
+
